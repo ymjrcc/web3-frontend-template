@@ -11,6 +11,19 @@ module.exports = {
   theme: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }) {
+      const newUtilities = {
+        '.line-clamp-3': {
+          overflow: 'hidden',
+          display: '-webkit-box',
+          '-webkit-box-orient': 'vertical',
+          '-webkit-line-clamp': '3', // 这里的 '3' 可以改为需要的行数
+          'line-clamp': '3', // 这是一个未来的标准属性，但目前还不广泛支持
+        },
+      };
+      addUtilities(newUtilities);
+    },
+  ],
 }
 
