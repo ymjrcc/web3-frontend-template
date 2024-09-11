@@ -1,4 +1,8 @@
+'use client'
+
 import { ConnectButton } from '@rainbow-me/rainbowkit';
+import {Button} from '@nextui-org/button';
+import toast from 'react-hot-toast';
 
 function Page() {
   return (
@@ -15,6 +19,9 @@ function Page() {
       <h1 className="text-3xl font-bold underline text-blue-600 text-center p-8">
         Hello Tailwindcss!
       </h1>
+      <div className="flex justify-center">
+        <Button onClick={() => toast.success('Clicked!')}>Click me</Button>
+      </div>
     </>
   );
 }
